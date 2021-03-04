@@ -140,6 +140,8 @@ function getTranslatedDescription(finding) {
 }
 
 /**
+ * Evaluator looks at all CSPs together to find bypasses.
+ * Multiple CSPs can form a strict policy even if they are bypassable on their own.
  * @param {string[]} rawCsps
  * @return {Finding[]}
  */
@@ -148,6 +150,8 @@ function evaluateRawCspForFailures(rawCsps) {
 }
 
 /**
+ * Evaluator looks at all CSPs together to find warnings.
+ * Multiple CSPs can form a policy without warnings even if they have warnings on their own.
  * @param {string[]} rawCsps
  * @return {Finding[]}
  */
