@@ -157,7 +157,7 @@ function evaluateRawCspForWarnings(rawCsps) {
 
 /**
  * @param {string[]} rawCsps
- * @return {Finding[][]}
+ * @return {Finding[][]} Entries are a list of findings corresponding to the CSP at the same index in `rawCsps`.
  */
 function evaluateRawCspForSyntax(rawCsps) {
   return evaluateForSyntaxErrors(rawCsps.map(c => new Parser(c).csp));
