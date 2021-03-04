@@ -140,24 +140,24 @@ function getTranslatedDescription(finding) {
 }
 
 /**
- * @param {Array<string>} rawCsps
- * @return {Array<Finding>}
+ * @param {string[]} rawCsps
+ * @return {Finding[]}
  */
 function evaluateRawCspForFailures(rawCsps) {
   return evaluateForFailure(rawCsps.map(c => new Parser(c).csp));
 }
 
 /**
- * @param {Array<string>} rawCsps
- * @return {Array<Finding>}
+ * @param {string[]} rawCsps
+ * @return {Finding[]}
  */
 function evaluateRawCspForWarnings(rawCsps) {
   return evaluateForWarnings(rawCsps.map(c => new Parser(c).csp));
 }
 
 /**
- * @param {Array<string>} rawCsps
- * @return {Array<Array<Finding>>}
+ * @param {string[]} rawCsps
+ * @return {Finding[][]}
  */
 function evaluateRawCspForSyntax(rawCsps) {
   return evaluateForSyntaxErrors(rawCsps.map(c => new Parser(c).csp));

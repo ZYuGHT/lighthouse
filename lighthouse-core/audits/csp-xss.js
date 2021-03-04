@@ -54,7 +54,7 @@ class CspXss extends Audit {
   /**
    * @param {LH.Artifacts} artifacts
    * @param {LH.Audit.Context} context
-   * @return {Promise<{cspHeaders: Array<string>, cspMetaTags: Array<string>}>}
+   * @return {Promise<{cspHeaders: string[], cspMetaTags: string[]}>}
    */
   static async getRawCsps(artifacts, context) {
     const devtoolsLog = artifacts.devtoolsLogs[Audit.DEFAULT_PASS];
@@ -88,7 +88,7 @@ class CspXss extends Audit {
   }
 
   /**
-   * @param {Array<string>} rawCsps
+   * @param {string[]} rawCsps
    * @return {LH.Audit.Details.TableItem[]}
    */
   static collectSyntaxResults(rawCsps) {
@@ -118,7 +118,7 @@ class CspXss extends Audit {
   }
 
   /**
-   * @param {Array<string>} rawCsps
+   * @param {string[]} rawCsps
    * @return {LH.Audit.Details.TableItem[]}
    */
   static collectBypassResults(rawCsps) {
@@ -127,7 +127,7 @@ class CspXss extends Audit {
   }
 
   /**
-   * @param {Array<string>} rawCsps
+   * @param {string[]} rawCsps
    * @return {LH.Audit.Details.TableItem[]}
    */
   static collectWarningResults(rawCsps) {
